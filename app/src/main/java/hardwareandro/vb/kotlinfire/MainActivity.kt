@@ -3,6 +3,7 @@ package hardwareandro.vb.kotlinfire
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -43,7 +44,7 @@ class MainActivity : AppCompatActivity() {
 
 public fun sendMessage(view: View){
 
-        mRef!!.child("hardware").child("andro").setValue(et_msg.text.toString())
+        mRef!!.child("hardware").child("andro").push().setValue(et_msg.text.toString())
 
 
     }
